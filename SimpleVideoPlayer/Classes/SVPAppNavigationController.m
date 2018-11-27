@@ -48,8 +48,9 @@ static NSString * _Nullable UserDocumentDirectory()
     AVPlayerViewController * const playerViewController = [[AVPlayerViewController alloc] init];
     playerViewController.player = player;
 
-    [self presentViewController:playerViewController animated:YES completion:NULL];
-    [player play];
+    [self presentViewController:playerViewController animated:YES completion:^{
+        [player play];
+    }];
 }
 
 @end
