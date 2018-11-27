@@ -7,6 +7,7 @@
 //
 
 #import "SVPAppNavigationController.h"
+#import "SVPFilesItem.h"
 #import "SVPFilesViewController.h"
 
 @import os.log;
@@ -18,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, nullable) SVPAppNavigationController *navigationController;
 
 @property (nonatomic, nullable) UITableView *tableView;
-@property (nonatomic, nullable) NSArray<NSString *> *items;
+@property (nonatomic, nullable) NSArray<SVPFilesItem *> *items;
 
 @end
 
@@ -78,24 +79,40 @@ static NSString * const kCellReuseIdentifier = @"SVPFilesViewControllerTableView
         return;
     }
 
-    NSMutableArray<NSString *> * const items = [[NSMutableArray alloc] init];
+    NSMutableArray<SVPFilesItem *> * const items = [[NSMutableArray alloc] init];
     NSError *error;
     NSArray<NSString *> * const contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:self.path error:&error];
     if (error) {
-        os_log_error(OS_LOG_DEFAULT, "Fail to list contents of directory at path: %@", self.path);
+        os_log_error(OS_LOG_DEFAULT, "Fail to list contents of directory at path: %@ error: %@", self.path, error);
         return;
     }
+
     for (NSString * const content in contents) {
-        NSString * const extension = content.pathExtension.lowercaseString;
-        // TODO: Support folder and other extensions.
-        if ([extension isEqualToString:@"mov"] || [extension isEqualToString:@"mp4"]) {
-            [items addObject:content];
+        NSString * const path = [self.path stringByAppendingPathComponent:content];
+
+        NSError *error = nil;
+        NSDictionary * const attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:&error];
+        if (error) {
+            os_log_error(OS_LOG_DEFAULT, "Fail to read attributes of item at path: %@ error: %@", path, error);
+            continue;
         }
+
+        NSString * const fileType = attributes[NSFileType];
+        SVPFilesItem *item;
+        if ([fileType isEqualToString:NSFileTypeDirectory]) {
+            item = [[SVPFilesItem alloc] initWithName:content directory:YES];
+        } else if ([fileType isEqualToString:NSFileTypeRegular]) {
+            item = [[SVPFilesItem alloc] initWithName:content directory:NO];
+        } else {
+            continue;
+        }
+
+        [items addObject:item];
     }
     self.items = [items copy];
 }
 
-- (void)setItems:(nullable NSArray<NSString *> *)items
+- (void)setItems:(nullable NSArray<SVPFilesItem *> *)items
 {
     if (_items == items) {
         return;
@@ -126,8 +143,14 @@ static NSString * const kCellReuseIdentifier = @"SVPFilesViewControllerTableView
         return nil;
     }
 
-    NSString * const item = self.items[index];
-    cell.textLabel.text = item;
+    SVPFilesItem * const item = self.items[index];
+    if (item.directory) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+
+    cell.textLabel.text = item.name;
 
     return cell;
 }
@@ -136,18 +159,30 @@ static NSString * const kCellReuseIdentifier = @"SVPFilesViewControllerTableView
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     const NSUInteger index = indexPath.row;
     NSAssert((index < self.items.count), @"indexPath should be in items range.");
     if (!(index < self.items.count)) {
         return;
     }
 
-    NSString * const item = self.items[index];
-    NSString * const videoPath = [self.path stringByAppendingPathComponent:item];
+    SVPFilesItem * const item = self.items[index];
+    NSString * const path = [self.path stringByAppendingPathComponent:item.name];
 
-    NSURL * const videoURL = [NSURL fileURLWithPath:videoPath];
+    if (item.directory) {
+        SVPFilesViewController * const filesViewController = [[SVPFilesViewController alloc] init];
+        filesViewController.path = path;
+        [self.navigationController pushViewController:filesViewController animated:YES];
+        return;
+    }
 
-    [self.navigationController presentAVPlayerWithItemAtURL:videoURL];
+    if (!item.audioVisualContent) {
+        return;
+    }
+
+    NSURL * const URL = [NSURL fileURLWithPath:path];
+    [self.navigationController presentAVPlayerWithItemAtURL:URL];
 }
 
 @end

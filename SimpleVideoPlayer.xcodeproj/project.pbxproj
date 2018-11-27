@@ -12,6 +12,7 @@
 		541A4C4F21AD1935008F79AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 541A4C4D21AD1935008F79AC /* LaunchScreen.storyboard */; };
 		541A4C5221AD1935008F79AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 541A4C5121AD1935008F79AC /* main.m */; };
 		541A4C5B21AD19B7008F79AC /* SVPFilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 541A4C5A21AD19B7008F79AC /* SVPFilesViewController.m */; };
+		5424013D21AD8CDE00C9BA5E /* SVPFilesItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5424013C21AD8CDE00C9BA5E /* SVPFilesItem.m */; };
 		54C9350B21AD3D21004584AE /* SVPAppNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9350A21AD3D21004584AE /* SVPAppNavigationController.m */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,8 @@
 		541A4C5121AD1935008F79AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		541A4C5921AD19B7008F79AC /* SVPFilesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVPFilesViewController.h; sourceTree = "<group>"; };
 		541A4C5A21AD19B7008F79AC /* SVPFilesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVPFilesViewController.m; sourceTree = "<group>"; };
+		5424013B21AD8CDE00C9BA5E /* SVPFilesItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVPFilesItem.h; sourceTree = "<group>"; };
+		5424013C21AD8CDE00C9BA5E /* SVPFilesItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVPFilesItem.m; sourceTree = "<group>"; };
 		54C9350921AD3D21004584AE /* SVPAppNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVPAppNavigationController.h; sourceTree = "<group>"; };
 		54C9350A21AD3D21004584AE /* SVPAppNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVPAppNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +78,8 @@
 				541A4C4321AD1934008F79AC /* SVPAppDelegate.m */,
 				54C9350921AD3D21004584AE /* SVPAppNavigationController.h */,
 				54C9350A21AD3D21004584AE /* SVPAppNavigationController.m */,
+				5424013B21AD8CDE00C9BA5E /* SVPFilesItem.h */,
+				5424013C21AD8CDE00C9BA5E /* SVPFilesItem.m */,
 				541A4C5921AD19B7008F79AC /* SVPFilesViewController.h */,
 				541A4C5A21AD19B7008F79AC /* SVPFilesViewController.m */,
 			);
@@ -153,6 +158,7 @@
 				541A4C5221AD1935008F79AC /* main.m in Sources */,
 				54C9350B21AD3D21004584AE /* SVPAppNavigationController.m in Sources */,
 				541A4C5B21AD19B7008F79AC /* SVPFilesViewController.m in Sources */,
+				5424013D21AD8CDE00C9BA5E /* SVPFilesItem.m in Sources */,
 				541A4C4421AD1934008F79AC /* SVPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

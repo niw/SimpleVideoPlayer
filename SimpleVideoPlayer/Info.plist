@@ -10,6 +10,7 @@
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>public.movie</string>
+				<string>public.audio</string>
 			</array>
 		</dict>
 	</array>
