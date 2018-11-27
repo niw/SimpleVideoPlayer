@@ -1,0 +1,344 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		541A4C4421AD1934008F79AC /* SVPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 541A4C4321AD1934008F79AC /* SVPAppDelegate.m */; };
+		541A4C4C21AD1935008F79AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 541A4C4B21AD1935008F79AC /* Assets.xcassets */; };
+		541A4C4F21AD1935008F79AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 541A4C4D21AD1935008F79AC /* LaunchScreen.storyboard */; };
+		541A4C5221AD1935008F79AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 541A4C5121AD1935008F79AC /* main.m */; };
+		541A4C5B21AD19B7008F79AC /* SVPFilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 541A4C5A21AD19B7008F79AC /* SVPFilesViewController.m */; };
+		54C9350B21AD3D21004584AE /* SVPAppNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9350A21AD3D21004584AE /* SVPAppNavigationController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		541A4C3F21AD1934008F79AC /* SimpleVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		541A4C4221AD1934008F79AC /* SVPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVPAppDelegate.h; sourceTree = "<group>"; };
+		541A4C4321AD1934008F79AC /* SVPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVPAppDelegate.m; sourceTree = "<group>"; };
+		541A4C4B21AD1935008F79AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		541A4C4E21AD1935008F79AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		541A4C5021AD1935008F79AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		541A4C5121AD1935008F79AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		541A4C5921AD19B7008F79AC /* SVPFilesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVPFilesViewController.h; sourceTree = "<group>"; };
+		541A4C5A21AD19B7008F79AC /* SVPFilesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVPFilesViewController.m; sourceTree = "<group>"; };
+		54C9350921AD3D21004584AE /* SVPAppNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVPAppNavigationController.h; sourceTree = "<group>"; };
+		54C9350A21AD3D21004584AE /* SVPAppNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVPAppNavigationController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		541A4C3C21AD1934008F79AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		541A4C3621AD1934008F79AC = {
+			isa = PBXGroup;
+			children = (
+				541A4C4121AD1934008F79AC /* SimpleVideoPlayer */,
+				541A4C4021AD1934008F79AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		541A4C4021AD1934008F79AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				541A4C3F21AD1934008F79AC /* SimpleVideoPlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		541A4C4121AD1934008F79AC /* SimpleVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				541A4C5821AD1955008F79AC /* Classes */,
+				541A4C4B21AD1935008F79AC /* Assets.xcassets */,
+				541A4C4D21AD1935008F79AC /* LaunchScreen.storyboard */,
+				541A4C5021AD1935008F79AC /* Info.plist */,
+				541A4C5121AD1935008F79AC /* main.m */,
+			);
+			path = SimpleVideoPlayer;
+			sourceTree = "<group>";
+		};
+		541A4C5821AD1955008F79AC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				541A4C4221AD1934008F79AC /* SVPAppDelegate.h */,
+				541A4C4321AD1934008F79AC /* SVPAppDelegate.m */,
+				54C9350921AD3D21004584AE /* SVPAppNavigationController.h */,
+				54C9350A21AD3D21004584AE /* SVPAppNavigationController.m */,
+				541A4C5921AD19B7008F79AC /* SVPFilesViewController.h */,
+				541A4C5A21AD19B7008F79AC /* SVPFilesViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		541A4C3E21AD1934008F79AC /* SimpleVideoPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 541A4C5521AD1935008F79AC /* Build configuration list for PBXNativeTarget "SimpleVideoPlayer" */;
+			buildPhases = (
+				541A4C3B21AD1934008F79AC /* Sources */,
+				541A4C3C21AD1934008F79AC /* Frameworks */,
+				541A4C3D21AD1934008F79AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleVideoPlayer;
+			productName = SimpleVideoPlayer;
+			productReference = 541A4C3F21AD1934008F79AC /* SimpleVideoPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		541A4C3721AD1934008F79AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Yoshimasa Niwa";
+				TargetAttributes = {
+					541A4C3E21AD1934008F79AC = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 541A4C3A21AD1934008F79AC /* Build configuration list for PBXProject "SimpleVideoPlayer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 541A4C3621AD1934008F79AC;
+			productRefGroup = 541A4C4021AD1934008F79AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				541A4C3E21AD1934008F79AC /* SimpleVideoPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		541A4C3D21AD1934008F79AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				541A4C4F21AD1935008F79AC /* LaunchScreen.storyboard in Resources */,
+				541A4C4C21AD1935008F79AC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		541A4C3B21AD1934008F79AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				541A4C5221AD1935008F79AC /* main.m in Sources */,
+				54C9350B21AD3D21004584AE /* SVPAppNavigationController.m in Sources */,
+				541A4C5B21AD19B7008F79AC /* SVPFilesViewController.m in Sources */,
+				541A4C4421AD1934008F79AC /* SVPAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		541A4C4D21AD1935008F79AC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				541A4C4E21AD1935008F79AC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		541A4C5321AD1935008F79AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		541A4C5421AD1935008F79AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		541A4C5621AD1935008F79AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SimpleVideoPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = at.niw.SimpleVideoPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		541A4C5721AD1935008F79AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SimpleVideoPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = at.niw.SimpleVideoPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		541A4C3A21AD1934008F79AC /* Build configuration list for PBXProject "SimpleVideoPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				541A4C5321AD1935008F79AC /* Debug */,
+				541A4C5421AD1935008F79AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		541A4C5521AD1935008F79AC /* Build configuration list for PBXNativeTarget "SimpleVideoPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				541A4C5621AD1935008F79AC /* Debug */,
+				541A4C5721AD1935008F79AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 541A4C3721AD1934008F79AC /* Project object */;
+}
