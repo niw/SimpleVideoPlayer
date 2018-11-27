@@ -83,30 +83,13 @@ static NSString * const kCellReuseIdentifier = @"SVPFilesViewControllerTableView
     NSError *error;
     NSArray<NSString *> * const contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:self.path error:&error];
     if (error) {
-        os_log_error(OS_LOG_DEFAULT, "Fail to list contents of directory at path: %@ error: %@", self.path, error);
+        os_log_error(OS_LOG_DEFAULT, "Failed to list contents of directory at path: %@ error: %@", self.path, error);
         return;
     }
 
     for (NSString * const content in contents) {
         NSString * const path = [self.path stringByAppendingPathComponent:content];
-
-        NSError *error = nil;
-        NSDictionary * const attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:&error];
-        if (error) {
-            os_log_error(OS_LOG_DEFAULT, "Fail to read attributes of item at path: %@ error: %@", path, error);
-            continue;
-        }
-
-        NSString * const fileType = attributes[NSFileType];
-        SVPFilesItem *item;
-        if ([fileType isEqualToString:NSFileTypeDirectory]) {
-            item = [[SVPFilesItem alloc] initWithName:content directory:YES];
-        } else if ([fileType isEqualToString:NSFileTypeRegular]) {
-            item = [[SVPFilesItem alloc] initWithName:content directory:NO];
-        } else {
-            continue;
-        }
-
+        SVPFilesItem * const item = [[SVPFilesItem alloc] initWithPath:path];
         [items addObject:item];
     }
     self.items = [items copy];
@@ -150,7 +133,7 @@ static NSString * const kCellReuseIdentifier = @"SVPFilesViewControllerTableView
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
 
-    cell.textLabel.text = item.name;
+    cell.textLabel.text = item.path.lastPathComponent;
 
     return cell;
 }
@@ -168,11 +151,10 @@ static NSString * const kCellReuseIdentifier = @"SVPFilesViewControllerTableView
     }
 
     SVPFilesItem * const item = self.items[index];
-    NSString * const path = [self.path stringByAppendingPathComponent:item.name];
 
     if (item.directory) {
         SVPFilesViewController * const filesViewController = [[SVPFilesViewController alloc] init];
-        filesViewController.path = path;
+        filesViewController.path = item.path;
         [self.navigationController pushViewController:filesViewController animated:YES];
         return;
     }
@@ -181,7 +163,7 @@ static NSString * const kCellReuseIdentifier = @"SVPFilesViewControllerTableView
         return;
     }
 
-    NSURL * const URL = [NSURL fileURLWithPath:path];
+    NSURL * const URL = [NSURL fileURLWithPath:item.path];
     [self.navigationController presentAVPlayerWithItemAtURL:URL];
 }
 

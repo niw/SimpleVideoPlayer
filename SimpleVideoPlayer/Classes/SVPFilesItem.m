@@ -9,6 +9,7 @@
 #import "SVPFilesItem.h"
 
 @import MobileCoreServices;
+@import os.log;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,15 +21,22 @@ NS_ASSUME_NONNULL_BEGIN
     return nil;
 }
 
-- (instancetype)initWithName:(NSString *)name directory:(BOOL)directory
+- (instancetype)initWithPath:(NSString *)path
 {
     if (self = [super init]) {
-        _name = [name copy];
+        _path = [path copy];
 
-        CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (__bridge CFStringRef)_name.pathExtension, nil);
+        CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (__bridge CFStringRef)path.pathExtension, nil);
         _audioVisualContent = UTTypeConformsTo(UTI, kUTTypeAudio) || UTTypeConformsTo(UTI, kUTTypeMovie);
 
-        _directory = directory;
+        NSError *error = nil;
+        NSDictionary * const attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:&error];
+        if (error) {
+            os_log_error(OS_LOG_DEFAULT, "Failed to read attributes of item at path: %@ error: %@", path, error);
+        } else {
+            NSString * const fileType = attributes[NSFileType];
+            _directory = [fileType isEqualToString:NSFileTypeDirectory];
+        }
     }
     return self;
 }
