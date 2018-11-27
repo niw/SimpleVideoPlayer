@@ -38,6 +38,10 @@ static NSString * _Nullable UserDocumentDirectory()
 
 - (void)presentAVPlayerWithItemAtURL:(NSURL *)URL
 {
+    if (self.presentedViewController) {
+        [self dismissViewControllerAnimated:NO completion:NULL];
+    }
+
     AVPlayerItem * const playerItem = [[AVPlayerItem alloc] initWithURL:URL];
     AVPlayer * const player = [[AVPlayer alloc] initWithPlayerItem:playerItem];
 
