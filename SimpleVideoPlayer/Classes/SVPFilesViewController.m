@@ -49,7 +49,7 @@ static NSString * const kCellReuseIdentifier = @"SVPFilesViewControllerTableView
 
     [NSLayoutConstraint activateConstraints:constraints];
 
-    [self _t1_main_reloadData];
+    [self _svp_main_reloadData];
 }
 
 // MARK: - Properties
@@ -65,10 +65,10 @@ static NSString * const kCellReuseIdentifier = @"SVPFilesViewControllerTableView
 
     self.title = _path.lastPathComponent;
 
-    [self _t1_main_reloadData];
+    [self _svp_main_reloadData];
 }
 
-- (void)_t1_main_reloadData
+- (void)_svp_main_reloadData
 {
     if (!self.viewLoaded) {
         return;
