@@ -87,7 +87,11 @@ static NSString * const kCellReuseIdentifier = @"SVPFilesViewControllerTableView
         return;
     }
 
-    for (NSString * const content in contents) {
+    // TODO: Support custom sorting.
+    NSArray<NSString *> * const sortedContents = [contents sortedArrayUsingComparator:^NSComparisonResult(NSString *obj1, NSString *obj2) {
+        return [obj1 compare:obj2];
+    }];
+    for (NSString * const content in sortedContents) {
         NSString * const path = [self.path stringByAppendingPathComponent:content];
         SVPFilesItem * const item = [[SVPFilesItem alloc] initWithPath:path];
         [items addObject:item];
