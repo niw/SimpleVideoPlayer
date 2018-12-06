@@ -26,9 +26,21 @@ static NSString * _Nullable UserDocumentDirectory()
     return directories.firstObject;
 }
 
+- (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil
+{
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
+- (nullable instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
 - (instancetype)init
 {
-    if (self = [super init]) {
+    if (self = [super initWithNibName:nil bundle:nil]) {
         SVPFilesViewController * const rootViewController = [[SVPFilesViewController alloc] init];
         rootViewController.path = UserDocumentDirectory();
         self.viewControllers = @[rootViewController];
